@@ -16,8 +16,8 @@ public class ElectricDevice {
      *
      * @param id    unique ID of the device
      * @param power electric power, must be bigger that 0
-     * @throws IlleagArgumentException if the power argument is <= 0
-     * @throws IlleagArgumentException if ID is null
+     * @throws IllegalArgumentException if the power argument is <= 0
+     * @throws IllegalArgumentException if ID is null
      */
     public ElectricDevice(String id, double power) {
         if (id == null) {
@@ -56,5 +56,19 @@ public class ElectricDevice {
      */
     public double getPower() {
         return power;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof ElectricDevice) {
+            ElectricDevice electricDevice = (ElectricDevice) obj;
+            return this.id.equals(electricDevice.id);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id.hashCode() * 31;
     }
 }

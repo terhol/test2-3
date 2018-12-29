@@ -28,8 +28,21 @@ public class CircuitBreaker implements ICircuitBreaker {
         return isOn;
     }
 
-    @override
+    @Override
     public void switchAndTest() throws OverloadedException {
-        // TO DO
+        if (this.isOverloaded()) {
+            throw new OverloadedException();
+        }
+        isOn = true;
+    }
+
+    private boolean isOverloaded() {
+        double powerNeeded = 0;
+        for (ElectricDevice device : devices) {
+            if (device != null && device.isOn()) {
+                powerNeeded = powerNeeded + device.getPower();
+            }
+        }
+        return (maxPower < powerNeeded);
     }
 }
