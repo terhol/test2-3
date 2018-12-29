@@ -36,10 +36,11 @@ public class Circuit implements ICircuit {
     @Override
     public int getFreeSocket() {
         int freeSocket = -1;
-        for (int i = 0; i < numSockets; i++) {
+        int i = 0;
+        while (freeSocket == -1) {
             if (connectedDevices[i] == null) {
                 freeSocket = i;
-                break;
+                i++;
             }
         }
         return freeSocket;
