@@ -36,7 +36,7 @@ public interface ICircuit {
      * @param device electric device to be connected
      * @throws NoFreeSocketException   if there is no free socket in the circuit
      * @throws OverloadedException     if the device caused overload
-     * @throws IlegalArgumentException if the given device is already connected
+     * @throws IllegalArgumentException if the given device is already connected
      *                                 to the circuit.
      */
     void connect(ElectricDevice device)
@@ -46,7 +46,7 @@ public interface ICircuit {
      * Disconnects device from the circuit.
      *
      * @param device electric device to be disconnected
-     * @throws IlegalArgumentException if the given device is not connected
+     * @throws IllegalArgumentException if the given device is not connected
      *                                 to the circuit
      */
     void disconnect(ElectricDevice device);
