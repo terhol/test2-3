@@ -1,14 +1,14 @@
 # Test 2-3
 Second test version 3 from subject PB162 on [FI MUNI](https://www.fi.muni.cz/)
 
-## Description (Czech language only)
+## Description
 
 
-Rozhraní ani předdefinované třídy neměňte, pokud to přímo nevyžaduje zadání! Metody NEMUSÍTE dokumentovat pomocí JavaDoc komentářů. Používejte zásadně privátní atributy.
+Do not change interface or already defined classes, if the task doesn’t require it explicitly! You do not have to document methods by JavaDoc comments. Use private attributes only.
 
--   Upravte třídu ElectricDevice tak aby platilo, že dvě zařízení sou stejná, pokud mají stejné ID.
--    Doplňte chybějící metodu switchAndTest() do třídy CircuitBreaker. Metoda "nahodí jistič" a zjistí, jestli nedošlo k přetížení. Pokud ano, tak se jistič zase vypne a vyhodí se výjimka.
--   Vytvořte třídu Circuit implementující rozhraní ICircuit. Třída představuje elektrický okruh s jističem. Elektrický okruh má daným počtem zásuvek (pole objektů typu ElectricDevice). Do zásuvek se mohou připojovat elektrická zařízení a jistič je schopen metodou switchAndTest() zjistit, jestli není okruh přetížen. Třída bude mít následující konstruktor:
+-   Change ElectricDevice class so that two devices are same if their IDs are same.
+-    Add missing switchAndTest() method into CircuitBreaker class. The method “starts the circuit breaker” and checks if there is not overloading. If so, it turns off the circuit breaker and exception is thrown.
+-   Create Circuit class which implements the ICircuit interface. This class represents electric circuit with circuit breaker. The electric circuit has a number of sockets (array of objects ElectricDevice). Electric devices can be plugged into sockets and circuit breaker is able to find out if the circuit is not overloaded by method switchAndTest. This class will have following constructor:
 
            /**
     	* @param numSockets number of electric sockets, must be bigger than zero
@@ -17,8 +17,7 @@ Rozhraní ani předdefinované třídy neměňte, pokud to přímo nevyžaduje z
     	*/
            public Circuit(int numSockets, int maxPower)
 
-    Třída Demo slouží pro vaši kontrolu funkčnosti kódu a obsahuje také logiku volání metod. Při chybě třída buďto spadne s příslušnou výjimkou nebo vypíše řádek s popisem chyby. Pokud žádná chyba není detekována, aplikace nespadne a vypíše se pouze úvodní věta:
-    Pri spravnem reseni system nespadne s vyjimkou, ani nevypise "CHYBA..."
+    Demo class is for checking code functionality and also contains logic of method calling. If error appears, class crashes with an exception or writes out a line with error description. If no error is detected, the application doesn’t crash and only the introduction sentence is shown: Pri spravnem reseni system nespadne s vyjimkou, ani nevypise "CHYBA..."
 
 
 ## License
